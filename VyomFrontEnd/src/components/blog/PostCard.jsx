@@ -1,0 +1,34 @@
+import { Link } from "react-router-dom";
+import PostImage from "./PostImage";
+import AuthorBadge from "./AuthorBadge";
+import CategoryBadge from "./CategoryBadge";
+
+const PostCard = ({ post }) => {
+  const img = post.thumbnail;
+  const author = post.author;
+  const category = post.categories?.[0];
+
+  return (
+    <Link
+      to={`/post/${post.slug}`}
+      className="bg-white rounded-lg shadow hover:shadow-lg transition block"
+    >
+      <PostImage
+        image={img}
+        alt={post.title}
+        className="h-48 rounded-t-lg"
+      />
+
+      <div className="p-4 space-y-3">
+
+        {category && <CategoryBadge category={category} />}
+
+        <h3 className="text-xl font-semibold">{post.title}</h3>
+
+        <AuthorBadge author={author} />
+      </div>
+    </Link>
+  );
+};
+
+export default PostCard;
