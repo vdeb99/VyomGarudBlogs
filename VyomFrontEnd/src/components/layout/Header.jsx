@@ -43,13 +43,7 @@ function Header() {
               </button>
             </Link>
           </li>
-          <li>
-            <Link to="/category">
-              <button className="flex items-center gap-2 px-4 py-2 rounded-full  shadow-md  hover:bg-blue-700 duration-200">
-                <span className="text-white">Category</span>
-              </button>
-            </Link>
-          </li>
+
           <li>
             <Link to="/">
               <SearchBar />
