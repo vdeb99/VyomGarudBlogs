@@ -1,25 +1,29 @@
 import { useEffect, useState } from "react";
 import AuthorAvatar from "./AuthorAvatar";
-import { getAuthorById } from "../../api/authors";
+import { getAuthorByDocId } from "../../api/authors";
+import { useNavigate } from "react-router-dom";
 const AuthorBadge = ({ author }) => {
+  const navigate = useNavigate();
   if (!author) return null;
-  
-  const [authorDetails, setAuthorDetails] = useState(null);
-  useEffect(() => {
-    getAuthorById(author.documentId)
-      .then((res) => {
-        console.log(res.data)
-        setAuthorDetails(res.data.data);
-      })
-      .catch((err) => console.error(err))
-      
-  }, []);
-  console.log('Author Details in Badge : ', authorDetails);
-  if(!authorDetails) return null;
+  const [authorDetails, setAuthorDetails] = useState(author);
+  if (!author.avatar) {
+    useEffect(() => {
+      getAuthorByDocId(author.documentId)
+        .then((res) => {
+          setAuthorDetails(res.data.data);
+        })
+        .catch((err) => console.error(err));
+    }, []);
+  }
+
   return (
-    <div className="flex items-center gap-2">
-      <AuthorAvatar avatar={authorDetails.avatar} name={authorDetails.name} size={32} />
-      <span className="text-sm text-gray-600">{author.name}</span>
+    <div onClick={()=>navigate(`/author/${authorDetails.documentId}`)} className="flex items-center gap-2 cursor-pointer">
+      <AuthorAvatar
+        avatar={authorDetails.avatar}
+        name={authorDetails.name}
+        size={32}
+      />
+      <span className="text-sm text-red-600">{author.name}</span>
     </div>
   );
 };
