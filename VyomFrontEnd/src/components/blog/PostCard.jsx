@@ -4,10 +4,11 @@ import AuthorBadge from "./AuthorBadge";
 import CategoryBadge from "./CategoryBadge";
 
 const PostCard = ({ post }) => {
-  const img = post.thumbnail;
+  console.log('Posts : ',post);
+  const img = post.coverImage.url;
   const author = post.author;
   const category = post.categories?.[0];
-
+  
   return (
     <Link
       to={`/post/${post.slug}`}
@@ -20,10 +21,8 @@ const PostCard = ({ post }) => {
       />
 
       <div className="p-4 space-y-3">
-
-        {category && <CategoryBadge category={category} />}
-
-        <h3 className="text-xl font-semibold">{post.title}</h3>
+        <h3 className="text-xl font-semibold text-amber-300">{post.title}</h3>
+        <span className="text-red-800">{post.excerpt}</span>
 
         <AuthorBadge author={author} />
       </div>

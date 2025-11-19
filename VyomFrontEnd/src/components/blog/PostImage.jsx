@@ -1,7 +1,7 @@
-import imageUrl  from "../../utils/imageUrl";
+import imageUrl from "../../utils/imageUrl";
 
 const PostImage = ({ image, alt = "", className = "" }) => {
-  const src = image ? imageUrl(image.url) : "/default-thumbnail.jpg";
+  const src = image ? imageUrl(image) : "/default-thumbnail.jpg";
 
   return (
     <img

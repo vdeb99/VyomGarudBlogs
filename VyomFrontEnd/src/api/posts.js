@@ -3,7 +3,7 @@ import { api } from "./client";
 export const getPosts = () => api.get("/posts?populate=*");
 
 export const getPostsWithRelations = () =>
-  api.get("/posts?populate=author,thumbnail,categories,tags");
+  api.get("/posts?populate=author,coverImage,categories,tags");
 
 export const getPost = (slug) =>
   api.get(`/posts?filters[slug][$eq]=${slug}&populate=*`);

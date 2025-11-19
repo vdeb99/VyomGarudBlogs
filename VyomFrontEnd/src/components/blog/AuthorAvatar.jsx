@@ -1,6 +1,7 @@
 import imageUrl  from "../../utils/imageUrl";
 
 const AuthorAvatar = ({ avatar, name, size = 40 }) => {
+  console.log(avatar);
   const src = avatar ? imageUrl(avatar.url) : "/default-avatar.png";
 
   return (
