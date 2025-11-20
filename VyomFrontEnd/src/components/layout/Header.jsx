@@ -43,12 +43,6 @@ function Header() {
               </button>
             </Link>
           </li>
-
-          <li>
-            <Link to="/">
-              <SearchBar />
-            </Link>
-          </li>
         </ul>
       </nav>
     </header>
