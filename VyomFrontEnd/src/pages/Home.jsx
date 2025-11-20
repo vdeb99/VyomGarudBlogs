@@ -3,11 +3,12 @@ import { getAllCategories } from "../api/categories";
 import CategorySection from "../components/blog/CategorySection";
 import Loader from "../components/ui/Loader";
 import ErrorMessage from "../components/ui/Error";
-
+import SearchBar from "../components/layout/SearchBar";
+import Search from "./Search";
 const Home = () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [query, setQuery] = useState("");
   useEffect(() => {
     getAllCategories()
       .then((res) => {
@@ -22,6 +23,14 @@ const Home = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
+      <SearchBar setQuery={setQuery}/>
+      {query && 
+      <div className="">
+      <h2 className="text-2xl font-bold mb-6 text-white">Search results for "{query}"</h2>
+      <Search slug={query}
+       />
+       </div>
+      }
       {categories.map((cat) => (
         <CategorySection key={cat.documentId} category={cat} />
       ))}
