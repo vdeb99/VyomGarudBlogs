@@ -8,7 +8,7 @@ import PostList from "../components/blog/PostList";
 import AuthorBadge from "../components/blog/AuthorBadge";
 import Loader from "../components/ui/Loader";
 import ErrorMessage from "../components/ui/Error";
-
+import { Mail } from "lucide-react";
 const Author = () => {
   const { documentId: docId } = useParams();
 
@@ -36,15 +36,19 @@ const Author = () => {
   if (!author) return <ErrorMessage message="Author not found" />;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
-      <AuthorBadge author={author} />
-
-      <h2 className="text-2xl font-bold mt-4 mb-6">Posts by {author.name}</h2>
-
-      <div className="prose max-w-none mb-6">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{author.bio}</ReactMarkdown>
+    <div className="max-w-6xl mx-auto px-4 py-8 text-amber-50">
+      <div className="flex justify-between mb-10">
+        <AuthorBadge author={author} />
+        <div className="flex gap-1 " >
+          <Mail></Mail>
+          <span>{author.email}</span>
+        </div>
       </div>
 
+      <div className="prose prose-invert max-w-none">
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{author.bio}</ReactMarkdown>
+      </div>
+      <h2 className="text-2xl font-bold mt-4 mb-6">Posts by {author.name}</h2>
       <PostList posts={posts} />
     </div>
   );

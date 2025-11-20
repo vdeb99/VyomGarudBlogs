@@ -23,7 +23,7 @@ const AuthorBadge = ({ author }) => {
         name={authorDetails.name}
         size={32}
       />
-      <span className="text-sm text-red-600">{author.name}</span>
+      <h1 className="text-lg text-red-600">{author.name}</h1>
     </div>
   );
 };
