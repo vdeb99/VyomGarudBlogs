@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import PostList from "./PostList";
 
 const CategorySection = ({ category }) => {
-  const posts = category.posts?.slice(0, 4) || [];
+  const posts = category.posts?.slice(0, 3) || [];
 
   return (
     <section className="my-14">
