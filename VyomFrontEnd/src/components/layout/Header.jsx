@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import SearchBar from "./SearchBar";
+
 function Header() {
   const navigate = useNavigate();
 
@@ -11,7 +11,7 @@ function Header() {
   }
   return (
     <header className="pt-2 shadow bg-blue-950">
-      <nav className="flex">
+      <nav className="flex justify-between">
         <div className="mr-4 flex justify-between">
           <button
             onClick={goBack}
@@ -28,22 +28,13 @@ function Header() {
             </span>
           </Link>
         </div>
-        <ul className="flex ml-auto">
-          <li>
-            <Link to="/">
-              <button className="flex items-center gap-2 px-4 py-2 rounded-full  shadow-md  hover:bg-blue-700 duration-200">
-                <span className="text-white">Home</span>
-              </button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/about">
-              <button className="flex items-center gap-2 px-4 py-2 rounded-full  shadow-md  hover:bg-blue-700 duration-200">
-                <span className="text-white">About</span>
-              </button>
-            </Link>
-          </li>
-        </ul>
+        <div className="mx-20">
+          <Link to="/">
+            <button className="flex items-center gap-2 px-4 py-2 rounded-full  shadow-md  hover:bg-blue-700 duration-200">
+              <span className="text-white">Home</span>
+            </button>
+          </Link>
+        </div>
       </nav>
     </header>
   );

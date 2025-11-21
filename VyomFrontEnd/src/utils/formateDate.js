@@ -1,4 +1,4 @@
-const formatDate = (dateString) => {
+export const formateDate = (dateString) => {
     if(!dateString) return '';
     const date=new Date(dateString);
     console.log(date)
@@ -9,4 +9,4 @@ const formatDate = (dateString) => {
     });
 
 }
-export default formatDate;
+formateDate;

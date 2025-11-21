@@ -5,6 +5,7 @@ import Loader from "../components/ui/Loader";
 import ErrorMessage from "../components/ui/Error";
 import SearchBar from "../components/layout/SearchBar";
 import Search from "./Search";
+import About from "./About";
 const Home = () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,7 +23,9 @@ const Home = () => {
   if (!categories.length) return <ErrorMessage message="No categories found" />;
 
   return (
+    
     <div className="max-w-6xl mx-auto px-4 py-8">
+      <About />
       <SearchBar setQuery={setQuery}/>
       {query && 
       <div className="">
