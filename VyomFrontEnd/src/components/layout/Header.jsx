@@ -1,5 +1,4 @@
 import React from "react";
-// import Logo from "/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
@@ -20,7 +19,7 @@ function Header() {
             <ArrowLeft className="w-3 h-3 text-white" />
           </button>
           <Link to="/" className="flex gap-1">
-          <img src="https://smart-spirit-34e745db09.media.strapiapp.com/thumbnail_logo_5ea9cb61dd.png?updatedAt=2025-11-23T16%3A11%3A31.912Z" alt="Logo" />
+            <img src='/logo.png' className="h-14 w-14" alt="Logo.jpg" />
             <span className="text-lg sm:text-xl md:text-2xl font-medium ">
               <span className="text-white">Vyom</span>
               <br />
