@@ -20,7 +20,7 @@ function Header() {
             <ArrowLeft className="w-3 h-3 text-white" />
           </button>
           <Link to="/" className="flex gap-1">
-          <img src="/logo.png" alt="Logo" />
+          <img src="https://smart-spirit-34e745db09.media.strapiapp.com/thumbnail_logo_5ea9cb61dd.png?updatedAt=2025-11-23T16%3A11%3A31.912Z" alt="Logo" />
             <span className="text-lg sm:text-xl md:text-2xl font-medium ">
               <span className="text-white">Vyom</span>
               <br />
