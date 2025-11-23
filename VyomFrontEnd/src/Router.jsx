@@ -7,15 +7,12 @@ import Author from "./pages/Author";
 import Search from "./pages/Search";
 import About from "./pages/About";
 
-
 import Layout from "./components/layout/Layout";
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        
-        
         <Route
           path="/"
           element={
@@ -69,9 +66,6 @@ const AppRouter = () => {
             </Layout>
           }
         />
-
-        
-
       </Routes>
     </BrowserRouter>
   );
